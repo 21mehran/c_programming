@@ -1,7 +1,7 @@
 Hi All,
 
-I am learning C and Git.\n
+I am learning C and Git.
 Wish me luck.
 
-Regards\n
+Regards
 Mehran Mujawar.
