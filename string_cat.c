@@ -55,3 +55,32 @@ int main ()
     printf ("%s - custom function\n", str1);
 }
 
+// STRING CAT (strlcat)
+
+#include <stdio.h>
+
+void string_cat (char *str1, char *str2, int dest_size)
+{
+    while (*str1) {
+        str1++;
+    }
+    
+    int i = 0;
+    while (*str2 && i < dest_size) {
+        *str1 = *str2;
+        str1++;
+        str2++;
+        i++;
+    }
+}
+
+int main ()
+{
+    char str1[20] = "mehran";  // Using arr[] because cannot modify string literal.
+    char *str2 = "_ahemad";
+    int dest_size = 20;        // It prevents overwriting hence safe
+    
+    string_cat (str1, str2, dest_size);
+    printf ("%s - custom function\n", str1);
+}
+
