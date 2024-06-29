@@ -66,9 +66,11 @@ int main ()
     for (int i = 1; i < 10; i++)
         head = insert_start (head, i * 10);
         
+    printf ("Middle of the linked list:\n");
     struct node *mid = mid_list (head);
     printf ("%p %d\n\n", mid, mid->data);
     
+    printf ("Original Linked list:\n");
     print_list (head);
     free_list (head);
 }
