@@ -22,7 +22,7 @@ int main ()
             
                 if (arr[i] == arr[j]) {
                     count++;
-                    freq[i] = -1; 
+                    freq[j] = -1; 
                 }
             }
         }
