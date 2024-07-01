@@ -68,22 +68,17 @@ struct node *actually_reverse (struct node *head)
 
 struct node *insert_start (struct node *head, int data)
 {
-    struct node *ptr = malloc (sizeof (struct node ));
+    struct node *ptr = malloc(sizeof(struct node));
+    ptr->data = data;
+    ptr->prev = NULL;
+    ptr->next = head;
     
-    if (head == NULL) {
-        head = ptr;
-        head->data = data;
-        head->prev = NULL;
-        head->next = NULL;
-    } else {
-        ptr->data = data;
-        ptr->prev = NULL;
-        ptr->next = head;
+    if (head != NULL) {
         head->prev = ptr;
-        head = ptr;
     }
     
-    return ptr;
+    head = ptr;
+    return head;
 }
 
 int main ()

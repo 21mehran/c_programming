@@ -12,18 +12,13 @@ struct node {
 
 void push (int data)
 {
-    struct node *ptr = malloc (sizeof (struct node));
+    struct node *ptr = malloc(sizeof(struct node));
     
-    if (top == NULL) {
-        top = ptr;
-        top->data = data;
-        top->link = NULL;
-    } else {
-        ptr->data = data;
-        ptr->link = top;
-        top = ptr;
-    }
-    printf ("%d --> stack\n", top->data);
+    ptr->data = data;
+    ptr->link = top;
+    top = ptr;
+    
+    printf("%d --> stack\n", top->data);
 }
 
 void pop ()

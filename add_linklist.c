@@ -35,15 +35,10 @@ struct node *insert_into_stack (struct node *head, int data)
 {
     struct node *ptr = malloc (sizeof (struct node));
     
-    if (head == NULL) {
-        head = ptr;
-        head->data = data;
-        head->link = NULL;
-    } else {
-        ptr->link = head;
-        ptr->data = data;
-        head = ptr;
-    }
+    ptr->data = data;
+    ptr->link = head;
+    head = ptr;
+    
     return head;
 }
 

@@ -13,19 +13,20 @@ struct node {
 
 void enq (int data) 
 {
-    struct node *ptr = malloc (sizeof (struct node));
+    struct node *ptr = malloc (sizeof(struct node));
+    ptr->data = data;
+    ptr->link = NULL;
     
     if (start == NULL) {
-        ptr->data = data;
-        ptr->link = NULL;
         start = end = ptr;
     } else {
-        ptr->data = data;
-        ptr->link = NULL;
         end->link = ptr;
+        end = ptr;
     }
-    printf ("%d --> <Queue>\n", ptr->data);
+    
+    printf("%d --> <Queue>\n", ptr->data);
 }
+
 
 void deq ()
 {
@@ -61,4 +62,3 @@ int main ()
     deq ();
     deq ();
 }
-
