@@ -5,7 +5,7 @@
 
 int set_bits (int num, int count) 
 {
-    if (num == 0)
+    if (!num)
         return count;
     else 
         set_bits (num & (num - 1), count + 1);
