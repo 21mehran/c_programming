@@ -29,7 +29,7 @@ void print_list (struct node *head)
     }
 }
 
-struct node *delete_kth_from_end (struct node *head, int k)
+struct node *delete_kth_end (struct node *head, int k)
 {
     struct node *ptr1 = head;
     struct node *ptr2 = head;
@@ -76,7 +76,7 @@ int main ()
     print_list (head);
     printf ("    end  \n");
     
-    struct node *kth = delete_kth_from_end (head, 5);
+    struct node *kth = delete_kth_end (head, 5);
     
     printf ("\nLinked list after deletion.\n   start\n");
     print_list (head);
