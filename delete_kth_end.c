@@ -1,5 +1,4 @@
-// Delete the kth element from the end of the list.
-// Recursively printing the list.
+// Delete kth element from the end of the linked list.
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -14,54 +13,45 @@ void free_list (struct node *head)
     struct node *ptr = head;
     
     while (ptr != NULL) {
-        head = head->link;
-        free (ptr);
-        ptr = head;
+        ptr = head->link;
+        free (head);
+        head = ptr;
     }
 }
 
 void print_list (struct node *head) 
 {
     struct node *ptr = head;
-
-    if (ptr == NULL)
-        return;
-    else {
+    
+    while (ptr != NULL) {
         printf ("%p %d\n", ptr, ptr->data);
-        return print_list (ptr->link);
+        ptr = ptr->link;
     }
 }
 
-void delete_kth_node (struct node *head, int k)
+struct node *delete_kth_from_end (struct node *head, int k)
 {
-    int count = 1;
-    int req_k = 0;
-    struct node *ptr = head;
-    struct node *kth_node = NULL;
+    struct node *ptr1 = head;
+    struct node *ptr2 = head;
+    int count = 0;
     
-    while (ptr) {
-        count++;
-        ptr = ptr->link;
-    }
+    // k + 1 because we need to delete the node.
+    // k if you want to return the kth element.
     
-    req_k = count - k;
-
-    // Reset pointer and count after counting total elements.
-    ptr = head;
-    count = 1;
-    
-    while (ptr) {
-        if (count == req_k) {
-            kth_node = ptr;
-            ptr = kth_node->link;
-            kth_node->data = ptr->data;
-            kth_node->link = ptr->link;
-            break;
-        }
+    while (ptr1) {
+        
+        if (count >= k + 1) 
+            ptr2 = ptr2->link;
+        
+        ptr1 = ptr1->link;
+        
+        if (ptr1 == NULL)
+            ptr2->link = ptr2->link->link;
         
         count++;
-        ptr = ptr->link;
     }
+    
+    return ptr2;
 }
 
 struct node *insert_start (struct node *head, int data)
@@ -82,13 +72,15 @@ int main ()
     for (int i = 1; i < 10; i++)
         head = insert_start (head, i * 10);
         
-    printf ("Original Linked list:\n");
+    printf ("Original Linked list : \n   start\n");
     print_list (head);
+    printf ("    end  \n");
     
-    struct node *ptr = head;
-    delete_kth_node (ptr, 3);
+    struct node *kth = delete_kth_from_end (head, 5);
     
-    printf ("\nAfter deleting the Kth element:\n");
+    printf ("\nLinked list after deletion.\n   start\n");
     print_list (head);
+    printf ("    end  \n");
+    
     free_list (head);
 }
