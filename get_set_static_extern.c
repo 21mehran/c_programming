@@ -8,9 +8,11 @@
 extern int get_static_number ();
 extern void set_static_number (int value);
 extern void (*fptr)();
+extern int *ptr;
 
 int main ()
 {
+	printf ("%d \n", *ptr);
 	printf ("%d \n", get_static_number());	   // Prints the value of static variable num.
 	set_static_number(100);
 	printf ("%d \n", get_static_number());	
@@ -24,6 +26,7 @@ int main ()
 #include <stdio.h>
 
 static int num = 21;
+int *ptr = &num;
 
 int get_static_number ()
 {

@@ -7,7 +7,8 @@
 #include "file2.h"  // This is where the static function and static variable is present.
 
 int main ()
-{
+{	
+	printf ("%d \n", *ptr);	// Prints the value of static variable num.
 	printf ("%d \n", get_static_number());	// Prints the value of static variable num.
 	printf ("%d \n", set_static_number(100));
 	printf ("%d \n", get_static_number());	
@@ -19,6 +20,7 @@ int main ()
 // FILE2.C
 
 static int num = 21;
+int *ptr = &num;
 
 int get_static_number ()
 {
