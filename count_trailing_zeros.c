@@ -28,6 +28,6 @@ int trailing_zeros (int num)
 
 int main()
 {
-    printf ("%d ", trailing_zeros (8));
+    printf ("%d : Trailing zeros", trailing_zeros (8));
     return 0;
 }
