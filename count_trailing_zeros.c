@@ -4,23 +4,23 @@
 
 // Using 2 arguments and recurssion.
 
-int set_bits (int num, int count) 
+int trailing_zeros (int num, int count) 
 {
-   if ((num & 1) == 0) 
-        return set_bits (num >> 1, count + 1); 
-   else
+  if ((num & 1) == 0) 
+        trailing_zeros (num >> 1, count + 1); 
+  else
         return count;
 }
 
 // Using recurssion and static variable;
 
-int set_bits (int num) 
+int trailing_zeros (int num) 
 {
   static int count = 0;
     
   if ((num & 1) == 0) {
         count++;
-        return set_bits (num >> 1); 
+        trailing_zeros (num >> 1); 
   } 
    
   return count;
@@ -28,6 +28,6 @@ int set_bits (int num)
 
 int main()
 {
-    printf ("%d ", set_bits (10, 0));
+    printf ("%d ", trailing_zeros (8));
     return 0;
 }
