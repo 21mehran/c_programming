@@ -51,7 +51,9 @@ int main ()
 	return 0;
 }
 
-/*
+
+/* 
+ * To resolve the deadlock acquire the mutex in the same sequence in both threads.
 1. pthread_mutex_lock & pthread_mutex_unlock are used for locking and unlocking mutexes.
 2. pthread_create creates a new thread to execute a specified function.
 3. pthread_join waits for a thread to complete its execution before continuing with main thread.
@@ -59,6 +61,3 @@ int main ()
 5. It is used instead of pthread_mutex_init (&mutex, NULL);
 */
 
-/* 
- * To resolve the deadlock acquire the mutex in the same sequence in both threads.
-*/
