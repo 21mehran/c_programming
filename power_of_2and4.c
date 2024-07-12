@@ -9,7 +9,7 @@ int power_of_two (int num)
 
 int power_of_four (int num)
 {
-    return ((num - 1) % 3 == 0);
+    return ((num - 1) % 3 == 0);  // Alternately : ((num & 0xAAAAAAAA) == 0);
 }
 
 int main ()
