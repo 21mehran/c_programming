@@ -5,7 +5,7 @@
 int string_compare (char *str1, char *str2)
 { 
     /* while (*str1++ == *str2++);
-     
+     *
      * return (*(--str1) - *(--str2));
      */
 
@@ -25,6 +25,8 @@ int main ()
     char *str2 = "mehrab";
     
     printf ("%d %d", string_compare (str1, str2), 'n' - 'b');
+    :clear
+:wq
 }
 
 // STRING COMPARE (strncmp)
