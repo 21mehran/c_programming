@@ -4,10 +4,10 @@
 
 void string_cat (char *str1, char *str2)
 { 
-    /* while (*dest++);
-     * dest--;
+    /* while (*str1++);
+     * str1--;
      *
-     * while (*dest++ = *src++);
+     * while (*str1++ = *str2++);
      */
 
     while (*str1) {
@@ -38,10 +38,10 @@ int main ()
 
 void string_cat (char *str1, char *str2, int limit)
 {
-    /* while (*dest++);
-     * dest--;
+    /* while (*str1++);
+     * str1--;
      *
-     * while ((*dest++ = *src++) && i++ < n - 1);
+     * while ((*str1++ = *str2++) && i++ < n - 1);
      */
 	
     while (*str1) {

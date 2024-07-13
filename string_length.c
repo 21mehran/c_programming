@@ -4,6 +4,11 @@
 
 int string_length (char *str)
 {
+	// int i = 0;
+	// while (*str++ && i++ >= 0)
+	//
+	// return i;
+
 	char *start = str;
 	
 	while (*str) {
