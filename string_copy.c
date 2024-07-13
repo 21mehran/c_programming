@@ -4,6 +4,8 @@
 
 void string_copy (char *str1, char *str2)
 {
+    // while (*str2++ = *str1);
+
     while (*str1) {
         *str2 = *str1;
         str1++;
@@ -27,7 +29,9 @@ int main ()
 void string_copy (char *str1, char *str2, int num)
 {
     int i = 0;
-    
+   
+    // while ((*str2++ = *str1) && i++ < n - 1);
+
     while (*str1 && i < num) {
         
         *str2 = *str1;
