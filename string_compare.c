@@ -3,7 +3,12 @@
 #include <stdio.h>
 
 int string_compare (char *str1, char *str2)
-{
+{ 
+    /* while (*str1++ == *str2++);
+     
+     * return (*(--str1) - *(--str2));
+     */
+
     while (*str1) {
         
         if (*str1 != *str2)
@@ -28,6 +33,11 @@ int main ()
 
 int string_compare (char *str1, char *str2, int limit)
 {
+    /*  while ((*str1++ == *str2++) && i++ < num - 1 );
+     * 
+     * return (*(--str1) - *(--str2));
+     */
+
     int i = 0;
     while (*str1 && i < limit) {
         
