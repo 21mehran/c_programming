@@ -4,6 +4,9 @@
 
 char *char_search (char *str, char ch) // It returns a pointer to the element.
 {
+
+    // while (*str++ != ch);
+
     while (*str) {
         
         if (*str == ch)
@@ -30,19 +33,17 @@ int main ()
 
 char *char_search (char *str, char ch)    // It returns a pointer to the element.
 {
-    while (*str) {
-        str++;
-    }
-    
-    str--;
+    char *last_occurance = NULL;
     
     while (*str) {
         
         if (*str == ch)
-            return str;
+           last_occurance = str;
             
-        str--;
+        str++;
     }    
+
+    return last_occurance;
 }
 
 int main ()
