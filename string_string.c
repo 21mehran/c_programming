@@ -6,7 +6,9 @@ char *string_string (char *haystack, char *needle)
 {
     int needle_len = 0;
     char *start_pointer = needle;
-    
+   
+    // while (*needle++ && needle_len++ >= 0);  // Calculate the string length of needle.
+
     while (*needle) {		   // Calcualte the string length of needle.
         needle_len++;
         needle++;
