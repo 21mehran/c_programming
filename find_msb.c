@@ -15,13 +15,13 @@ int Most_sign_bit (int num, int pos)
 
 int Most_sign_bit (int num, int pos) 
 {
-    while (!(num & 1)) {
+    while (num) {
 
         pos++;
         num = num >> 1;
     }
     
-    return pos + 1;
+    return pos;
 }
 
 // Using logarithm - math.h
