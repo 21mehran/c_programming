@@ -22,7 +22,7 @@ int main ()
     
     int (*fptr[]) (int, int) = {add, sub};
     
-    printf ("Add = %d \nSub = %d\n", add (num_1, num_2), sub (num_1, num_2));
+    printf ("Add = %d \nSub = %d\n", fptr[0] (num_1, num_2), fptr[1] (num_1, num_2));
     
     return 0;
 }
