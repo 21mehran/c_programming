@@ -12,16 +12,12 @@ int main ()
     int position = 0;
     int total_bits = sizeof(num) * 8; 
 
-    while (position < total_bits) {
-        
-        rev = rev | (((num >> position) & 1) << (total_bits - 1 - position));
-        position++;
-    }
+    while (position < total_bits) 
+        rev = (rev << 1) | ((num >> position++) & 1);
 
     // for (int i = 0; i < total_bits; i++)
-    //    rev = rev | ((num >> i) & 1) << (total_bits - 1 - i);
-
-    printf("Rotated bits result: %u\n", rev);
+    //    rev = (rev << 1) | ((num >> i++) & 1);
+	printf("Rotated bits result: %u\n", rev);
     
     return 0;
 }
