@@ -18,6 +18,9 @@ int main ()
         position++;
     }
 
+    // for (int i = 0; i < total_bits; i++)
+    //    rev = rev | ((num >> i) & 1) << (total_bits - 1 - i);
+
     printf("Rotated bits result: %u\n", rev);
     
     return 0;
