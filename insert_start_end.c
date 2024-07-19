@@ -31,6 +31,17 @@ struct node *insert_end (struct node *head, int data)
     return head;
 }
 
+void free_list (struct node *head)
+{
+    struct node *ptr = head;
+
+    while (ptr != NULL) {
+        ptr = head->link;
+        free (head);
+        head = ptr;
+    }
+}
+
 void print_list (struct node *head) 
 {
     struct node *ptr = head;
@@ -57,5 +68,6 @@ int main ()
     }
     
     print_list (start);
+    free_list (start);
     return 0;    
 }
