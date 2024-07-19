@@ -5,7 +5,7 @@
 
 union person {
     int num;
-    char arr[4];
+    unsigned har arr[4]; 	// Char is signed by default. (Important)
 };
 
 int main()
