@@ -61,9 +61,12 @@ int main ()
     for (int i = 1; i < 10; i++)
         head = insert_start (head, i * 10);
         
-    delete_even (head);
+    printf ("Original linked list:\n");
+    print_list (head);
     
     printf ("After deleting even nodes:\n");
+    delete_even (head);
+
     print_list (head);
     free_list (head);
 }
