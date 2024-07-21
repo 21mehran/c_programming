@@ -31,27 +31,29 @@ void print_list (struct node *head)
 
 struct node *delete_kth_end (struct node *head, int k)
 {
-    struct node *ptr1 = head;
-    struct node *ptr2 = head;
-    int count = 0;
-    
+    struct node *first = head;
+    struct node *second = head;
+    struct node *temp = NULL;
+
+    int count = 1;
+
     // k + 1 because we need to delete the node.
     // k if you want to return the kth element.
-    
-    while (ptr1) {
-        
-        if (count >= k + 1) 
-            ptr2 = ptr2->link;
-        
-        ptr1 = ptr1->link;
-        
-        if (ptr1 == NULL)
-            ptr2->link = ptr2->link->link;
-        
+
+    while (first && second) {
+
+        if (count > k + 1)
+            second = second->link;
+
+        first = first->link;
         count++;
     }
-    
-    return ptr2;
+
+    temp = second->link;
+    second->link = temp->link;
+    free (temp);
+
+    return second;  // When count > k, it will return the kth node.
 }
 
 struct node *insert_start (struct node *head, int data)
