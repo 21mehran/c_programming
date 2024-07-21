@@ -36,17 +36,18 @@ void delete_kth_start (struct node *head, int k)
 {
     int count = 1;
     struct node *ptr = head;
-    struct node *trail_ptr = NULL;
-    
+    struct node *temp = NULL;
+
     while (ptr && count != k) {
-        
-        trail_ptr = ptr;
         ptr = ptr->link;
         count++;
     }
-    
-    trail_ptr->link = ptr->link;
-    free (ptr);    
+
+    temp = ptr->link;
+    ptr->data = temp->data;
+    ptr->link = temp->link;
+
+    free (temp);
 }
 
 struct node *insert_start (struct node *head, int data)
