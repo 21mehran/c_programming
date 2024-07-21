@@ -33,12 +33,11 @@ void free_list (struct node *head)
 }
 
 struct node *delete_mid (struct node *head)
-{ 
+{
     struct node *slow  = head;
-    struct node *fast = head->link->link;
+    struct node *fast = head;
     struct node *temp = NULL;
-    // Inorder to delete the mid node I need to be 1 node behind it.
-    
+
     while (fast && fast->link) {
         
         fast = fast->link->link;
@@ -49,6 +48,7 @@ struct node *delete_mid (struct node *head)
     // slow->link = slow->link->link; 
     
     temp = slow->link;
+    slow->data = temp->data;
     slow->link = temp->link;
     free (temp);
 }
