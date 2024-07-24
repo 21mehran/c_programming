@@ -13,6 +13,9 @@ int main() {
     int (*ptr)[4];  // pointer to an array of 4 integers
     ptr = arr;      // Points to first row of 2D array.
 
+    // ptr++;
+    // printf ("%d ", (*(*ptr))); // This will print 4 : ptr[1][0]
+
     // When printing entire 2D array.
     // ptr[i][j] is same as *(ptr)[j] followed by ptr++;
 
