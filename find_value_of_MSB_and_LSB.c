@@ -3,12 +3,13 @@
 
 #include <stdio.h>
 #include <math.h>
+#include <stdint.h>
 
 int main ()
 {
-    int num   = 20;              // 10100
-    int right = 0;
-    int left  = 0;
+    uint8_t num   = 20;          // 10100
+    uint8_t right = 0;
+    uint8_t left  = 0;
     
     right = num & (-num);        // returns 00100
     left  = num & (num - 1);     // returns 10000
@@ -16,5 +17,3 @@ int main ()
     printf ("Value of right most bit : %d\nValue of left most bit : %d\n", right, left);
     return 0;
 }
-
-
