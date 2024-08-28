@@ -1,11 +1,12 @@
 // Find the second largest element in the array witout sorting.
 
 #include <stdio.h>
+#include <limits.h>
 
 int find_second_largest (int arr[], int size)
 {
-    int large, second_large;
-    large = second_large = arr[0];
+    int large = arr[0];
+    int second_large = INT_MIN;
     
     int second_large_index = -1;
     
