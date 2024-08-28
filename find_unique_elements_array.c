@@ -10,6 +10,8 @@ void find_unique_elements (int arr[], int len)
     for (int i = 0; i < len; i++)
         hash [arr[i]]++;
 
+    printf ("Unique Elements in the array\n");
+
     for (int i = 0; i < HASH_SIZE; i++) {
 
         if (hash[i] == 1)
@@ -25,4 +27,5 @@ int main (void)
 
     find_unique_elements (arr, len);
 
+    return 0;
 }
