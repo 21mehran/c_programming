@@ -1,4 +1,4 @@
-// Find the Second Largest Number in an array.
+// Find the second smallest number in an array.
 
 #include <stdio.h>
 #include <limits.h>
