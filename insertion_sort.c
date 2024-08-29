@@ -1,33 +1,36 @@
-// IMPLEMENTING INSERTION SORT ALGORITHM. 
+// Insertion sort - Implementation.
 
 #include <stdio.h>
 
 void insertion_sort (int arr[], int len) 
 {
-    for (int i = 1; i < len; i++) {
-
-        int temp = arr[i];
-        int j = i - 1;
+    for (int i = 1, j; i < n; i++) {
         
-        while (j >= 0 && temp < arr[j]) { 
-    
+        int key = arr[i];
+        
+        for (j = i - 1; j >= 0 && key < arr[j]; j--) // < Ascending : > desending
             arr[j + 1] = arr[j];
-            j--;
-        }
-        
-        arr[j + 1] = temp;
-    } 
+
+        arr[j + 1] = key;   // Since j is already decremented therefore j + 1;
+    }
 }
 
-int main() {
-    
+void print_array (int arr[], int size)
+{
+    for (int i = 0; i < size; i++) 
+        printf("%d ", arr[i]);
+        
+    printf("\n");
+}
+
+int main () 
+{
     int arr[] = {12, 11, 13, 5, 6};
-    int len = sizeof(arr)/sizeof(arr[0]);
+    int len = sizeof(arr) / sizeof(arr[0]);
 
     insertion_sort (arr, len);
-        
-    for (int i = 0; i < 5; i++)
-        printf("%d ", arr[i]);
+    print_array (arr, len);
 
     return 0;
 }
+
