@@ -7,9 +7,11 @@ int binary_search (int *arr, int len, int target)
 {
     int start = 0;
     int end = len - 1;
-    int mid = start + (end - start) / 2;
     
     while (start <= end) {
+
+        int mid = start + (end - start) / 2;
+
         if (arr[mid] == target)
             return mid;
         else if (arr[mid] > target)
@@ -17,9 +19,9 @@ int binary_search (int *arr, int len, int target)
         else
             start = mid + 1;
             
-        start++;
-        end--;
     }
+
+    return -1;
 }
 
 int main ()
@@ -30,5 +32,9 @@ int main ()
     
     int position = binary_search (arr, len, target);
     
-    printf ("Target is at position - %d ", position);
+    if (position != -1)
+        printf("Target is at position - %d\n", position);
+    else
+        printf("Target not found in the array\n");
+
 }
