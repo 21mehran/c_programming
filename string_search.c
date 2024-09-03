@@ -5,7 +5,8 @@
 char *char_search (char *str, char ch) // It returns a pointer to the element.
 {
 
-    // while (*str++ != ch);
+    // int len = 0;
+    // while (*str++ != ch && ++len);
 
     while (*str) {
         
