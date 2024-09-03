@@ -41,7 +41,7 @@ void string_cat (char *str1, char *str2, int limit)
     /* while (*str1++);
      * str1--;
      *
-     * while ((*str1++ = *str2++) && i++ < n - 1);
+     * while ((*str1++ = *str2++) && limit--);
      */
 	
     while (*str1) {
