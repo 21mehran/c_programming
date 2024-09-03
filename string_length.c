@@ -4,10 +4,10 @@
 
 int string_length (char *str)
 {
-	// int i = 0;
-	// while (*str++ && i++ >= 0)
+	// int len = 0;
+	// while (*str++ && ++len)
 	//
-	// return i;
+	// return len;
 
 	char *start = str;
 	
