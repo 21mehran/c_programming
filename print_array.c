@@ -1,4 +1,4 @@
-// Print array elements using Recursion.
+// Print array elements backwards using Recursion.
 
 #include <stdio.h>
 
@@ -9,7 +9,17 @@ void printer (int arr[], int len)
     else {
          printf ("%d ", arr[len - 1]);             // Print arr in reverse order. 
          printer (arr, len - 1);            
-         printf ("%d ", arr[len - 1]);            // Print arr in normal order.
+         printf ("%d ", arr[len - 1]);             // Print arr in normal order.
+    }
+}
+
+void printer (int *arr, int len) 
+{
+    if (len) {
+
+        printf ("%d ", *arr);           // Prints array normal.
+        printer (arr + 1, len - 1);
+        printf ("%d ", *arr);           // Prints array backwards.
     }
 }
 
