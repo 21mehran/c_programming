@@ -29,5 +29,7 @@ int trailing_zeros (int num)
 int main()
 {
     printf ("%d : Trailing zeros", trailing_zeros (8));
+    printf ("%d ", __builtin_ctz(n));   // Builtin function in GCC to count zeros.
+
     return 0;
 }
