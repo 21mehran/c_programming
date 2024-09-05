@@ -32,8 +32,19 @@ void print_list (struct node *head)
     }
 }
 
-void delete_node (struct node *delete_pointer)
+void delete_node (struct node *head, struct node *delete_pointer)
 {
+    if (!delete_pointer->link) {
+        
+        while (head->link != delete_pointer) {
+            head = head->link;
+        }
+        
+        head->link = NULL;
+        free (delete_pointer);
+        return;
+    }
+    
     struct node *ptr = delete_pointer->link;
     delete_pointer->data = ptr->data;
     delete_pointer->link = ptr->link;
@@ -54,7 +65,7 @@ struct node *insert_start (struct node *head, int data)
 int main ()
 {
     struct node *head = NULL;
-    
+  
     for (int i = 1; i < 10; i++)
         head = insert_start (head, i * 10);
         
@@ -62,9 +73,14 @@ int main ()
     print_list (head);
     
     struct node *ptr = head;
-    delete_node (ptr->link->link->link);
+    while (ptr->link) { ptr = ptr->link; }  // Deleting last node.
+    
+    delete_node (head, ptr);    // Deleting tail.
+    delete_node (head, head);   // Deleting head.
     
     printf ("\nAfter deleting Linked list:\n");
     print_list (head);
+    
     free_list (head);
+    return 0;
 }
