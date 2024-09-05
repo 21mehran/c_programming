@@ -41,7 +41,6 @@ void delete_node (struct node *head, struct node *delete_pointer)
         while (ptr->link != delete_pointer) 
             ptr = ptr->link;
 
-
         ptr->link = NULL;
         free(delete_pointer);
 
