@@ -53,7 +53,6 @@ void delete_node (struct node *head, struct node *delete_pointer)
     }
 }
 
-
 struct node *insert_start (struct node *head, int data)
 {
     struct node *ptr = malloc (sizeof (struct node));
