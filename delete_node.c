@@ -32,24 +32,28 @@ void print_list (struct node *head)
     }
 }
 
-void delete_node (struct node *head, struct node *delete_pointer)
+void delete_node (struct node *head, struct node *delete_pointer) 
 {
-    if (!delete_pointer->link) {
+    if (!delete_pointer->link) 
+    {
+        struct node *ptr = head;
+
+        while (ptr->link != delete_pointer) 
+            ptr = ptr->link;
+
+
+        ptr->link = NULL;
+        free(delete_pointer);
+
+    } else {
         
-        while (head->link != delete_pointer) {
-            head = head->link;
-        }
-        
-        head->link = NULL;
-        free (delete_pointer);
-        return;
+        struct node *ptr = delete_pointer->link;
+        delete_pointer->data = ptr->data;
+        delete_pointer->link = ptr->link;
+        free(ptr); 
     }
-    
-    struct node *ptr = delete_pointer->link;
-    delete_pointer->data = ptr->data;
-    delete_pointer->link = ptr->link;
-    free (ptr);
 }
+
 
 struct node *insert_start (struct node *head, int data)
 {
