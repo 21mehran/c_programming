@@ -39,10 +39,11 @@ struct node *find_second_occurance (struct node *head, int num)
 {
     struct node *ptr = head;
     struct node *target = NULL;
-    
+	int count = 0;
+
     while (ptr) {
         
-        if (ptr->data == num) 
+        if (ptr->data == num && count < 2) 
                 target = ptr;
             
         ptr = ptr->link;
