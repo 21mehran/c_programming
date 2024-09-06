@@ -46,6 +46,19 @@ struct node* reverse (struct node *head)
     return head;
 }
 
+struct node* reverse (struct node* head) {
+    
+    if (head == NULL || head->link == NULL) 
+        return head;
+    
+    struct node* new_head = reverse(head->link);
+
+    head->link->link = head;  
+    head->link = NULL;        
+
+    return new_head;         
+}
+
 struct node *insert_start (struct node *head, int data)
 {
     struct node *ptr = malloc (sizeof (struct node));
