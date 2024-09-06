@@ -46,6 +46,8 @@ struct node* reverse (struct node *head)
     return head;
 }
 
+// Recursive method. 
+
 struct node* reverse (struct node* head) {
     
     if (head == NULL || head->link == NULL) 

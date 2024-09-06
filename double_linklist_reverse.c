@@ -49,6 +49,22 @@ void print_reverse (struct node *head)
     printf ("\n");
 }
 
+// Recursive Reverse.
+struct node* actually_reverse(struct node* head)
+{
+    if (head == NULL) 
+        return NULL;
+
+    struct node* temp = head->next;
+    head->next = head->prev;
+    head->prev = temp;
+
+    if (head->prev == NULL) 
+        return head;
+
+    return actually_reverse(temp);
+}
+
 // Reverse list using pointer manipulation.
 struct node *actually_reverse (struct node *head) 
 {
