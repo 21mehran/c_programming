@@ -66,18 +66,17 @@ struct node *detect_loop (struct node *head)
         fast = fast->link->link;
         
         if (fast == slow)
-            break;
+            return slow;
     }
     
-    return fast;
+    return NULL;
 }
 
 // Resolving the loop.
 
 void resolve_loop (struct node *start_node, struct node *head)
 {
-    head = start_node;
-    head->link = NULL;
+    start_node->link = NULL;
 }
 
 int main ()
@@ -105,9 +104,7 @@ int main ()
 
     // Resolving the loop.   
     
-    struct node *ptr = head;
     resolve_loop (start_node, head);
-    head = ptr;
         
     printf ("List After resolving the loop/cycle.\n");    
     print_list (head);    
