@@ -13,7 +13,9 @@ int main ()
     
     right = num & (-num);        // returns 00100
     left  = num & (num - 1);     // returns 10000
-    
+   
+    // left fails for numbers like 10 100 1000 10000
+
     printf ("Value of right most bit : %d\nValue of left most bit : %d\n", right, left);
     return 0;
 }
