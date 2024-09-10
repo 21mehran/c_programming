@@ -9,7 +9,7 @@ int find_missing_number (int arr[], int size)
     int xor_array = 0; // XOR of all elements in the array
 
     // Using Bitwise operations.
-    for (int i = 1; i <= size + 1; i++) 
+    for (int i = 1; i <= size + 1; i++)  // Size + 1 because you have to consider the missing element as well. 
         xor_full = xor_full ^ i;
 
     for (int i = 0; i < size; i++) 
@@ -23,6 +23,21 @@ int find_missing_number (int arr[], int size)
 
     return xor_full ^ xor_array;
 }
+
+// For non consecutive array.
+
+int find_missing_number (int arr[], int size)
+{
+  int n = size + 1;
+  int expected_sum = (n * (n + 1)) / 2;
+  int actual_sum = 0;
+
+  for (int i = 0; i < size; i++)
+      actual_sum = actual_sum + arr[i];
+
+  return expected_sum - actual_sum;
+}
+
 
 int main () 
 {
