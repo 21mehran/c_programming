@@ -26,7 +26,8 @@ void smallest_subarray_sum (int arr[], int len, int target)
             }
         }
     }
-    
+
+	// Printing the smallest subarray
     for (int i = small_start; i <= small_end; i++)
         printf ("%d ", arr[i]);
 }
