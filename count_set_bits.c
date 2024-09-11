@@ -33,5 +33,11 @@ int main ()
         count++;
     }
 
+    // int count = 1;
+    // while (num = (num) & (num - 1)) count++;
+    
+    // while (num) num = num & (num - 1), count++;
+
+
     printf ("%d", count);
 }
