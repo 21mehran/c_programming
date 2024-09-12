@@ -15,6 +15,8 @@ int sub (int a, int b)
     return add (a, ~b + 1);
 }
 
+// sub = a + ~(b) + 1;
+
 int main () 
 {
     int num_1 = 20;
