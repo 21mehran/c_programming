@@ -3,17 +3,19 @@
 
 #include <stdio.h>
 
-void swap_nibble (int *num, int *res)
+int swap_nibble (int num) 
 {
-    // Using loop
-    for (int i = 0; *num; i++, *num = *num >> 8) {
+    for (int i = 0; i < 32; i = i + 8) {
         
-        int nibble_1 = *num & 0xF;
-        int nibble_2 = (*num >> 4) & 0xF;
+        int bit = (num >> i) & 0xFF;
         
-        int swap = nibble_2 | (nibble_1 << 4);
-        *res = *res | (swap << (8 * i));
+        int mask = (bit & ~0xF0) ^ (bit >> 4);
+        mask = mask | (mask << 4);
+        
+        num = num ^ (mask << i);
     }
+    
+    return num;
 }
 
 int main () 
