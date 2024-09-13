@@ -15,6 +15,13 @@ int swap_half_nibble (int num)
     }
 
     return num;
+
+    /* for (int i = 0, j = 7; i < 8; i++, j--) {
+        
+        int bit = (num >> (4 * i)) & 0xF;
+        result = result | (bit << (4 * j));
+       }
+    */
 }
 
 int swap_half_nibble (int num) 

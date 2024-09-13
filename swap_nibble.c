@@ -16,6 +16,14 @@ int swap_nibble (int num)
     }
     
     return num;
+
+    /*
+        for (int i = 0, j = 3; i < 4; i++, j--) {
+        
+            int bit = (num >> (8 * i)) & 0xFF;
+            result = result | (bit << (8 * j));
+        }
+    */
 }
 
 int main () 
