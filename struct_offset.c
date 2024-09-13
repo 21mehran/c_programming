@@ -20,6 +20,11 @@ int main ()
 {
     struct test p1;
 
+    /*      struct node *ptr;
+     *      SIZE(ptr, &(ptr->data));
+     */
+
+
     printf ("Offset a : using function - %d\n", struct_offset (&p1, &p1.a));     // Using function call.
     printf ("Offset b : using function - %d\n", struct_offset (&p1, &p1.b));
     printf ("Offset c : using MACRO - %d\n", OFFSET (&p1, &p1.c));             // Using MACRO.
