@@ -25,8 +25,7 @@ int main ()
     char *str2 = "mehrab";
     
     printf ("%d %d", string_compare (str1, str2), 'n' - 'b');
-    :clear
-:wq
+
 }
 
 // STRING COMPARE (strncmp)
