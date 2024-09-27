@@ -1,4 +1,5 @@
 // Merge two sorted linked list.
+// 0 3 4 - 1 2 4 = 0 1 2 3 4 4 
 
 #include <stdio.h>
 #include <stdlib.h>
