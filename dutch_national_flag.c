@@ -8,8 +8,8 @@ void dutch_flag (int arr[], int len)
     int mid = 0;
     int end = len - 1;
     
-    for (int i = 0; i < len; i++) {
-        
+    while (mid <= end) {   
+
         if (arr[mid] == 0) {
             
             int temp = arr[start];
